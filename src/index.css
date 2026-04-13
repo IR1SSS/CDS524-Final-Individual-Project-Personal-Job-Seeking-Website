@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #7c3aed #0a0a0f;
+  }
+
+  body {
+    @apply bg-dark-900 text-gray-100 font-sans;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0f;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #7c3aed;
+    border-radius: 3px;
+  }
+
+  ::selection {
+    background: rgba(0, 212, 255, 0.3);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .section-subtitle {
+    @apply text-gray-400 text-lg mb-12 max-w-2xl;
+  }
+
+  .glass-card {
+    @apply bg-dark-700/50 backdrop-blur-sm border border-dark-500/50 rounded-xl;
+  }
+
+  .glow-border {
+    @apply border border-primary/20 hover:border-primary/50 transition-all duration-300;
+  }
+
+  .glow-border:hover {
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.15), 0 0 30px rgba(0, 212, 255, 0.05);
+  }
+
+  .tag {
+    @apply px-3 py-1 text-sm font-mono rounded-full bg-primary/10 text-primary border border-primary/20;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+}
